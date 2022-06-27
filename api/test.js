@@ -1,9 +1,9 @@
 const fs = require("fs");
 
-export default function handler(req, res) {
+module.exports = (req, res) => {
     const { name } = req.query;
-    (async () => {
-        let buffer = fs.readFileSync("../2.jpeg")
-        res.status(200).send(buffer);
-    })();
+    fs.writeFileSync("5.svg", `<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <text x="0" y="15" fill="red">I love SVG</text>
+  </svg>`);
+    res.status(200).send("5");
 }
