@@ -1,4 +1,4 @@
 export default function handler(req, res) {
     const { name } = req.query;
-    res.status(200).send("<img src=\"https://static-qn.drblack-system.com/dbs-art/2021/02/293a4339059e60b5_1_post.jpeg?imageMogr2/gravity/Center/thumbnail/570x\">");
+    res.status(200).send('<svg xmlns="http:\/\/www.w3.org/2000/svg" version="1.1" height="24.0" width="605"><text x="0" y="20" fill="#FF0000" font-size="20">你指尖跃动的电光，是我此生不变的信仰，唯我超电磁炮永世长存。</text></svg>');
 }
