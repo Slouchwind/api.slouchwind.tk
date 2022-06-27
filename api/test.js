@@ -2,5 +2,8 @@ const fs = require("fs");
 
 export default function handler(req, res) {
     const { name } = req.query;
-    res.status(200).send(fs.readFileSync("../293a4339059e60b5_1_post.jpeg").toString());
+    (async () => {
+        let buffer = fs.readFileSync("../2.jpeg")
+        res.status(200).send(buffer);
+    })();
 }
