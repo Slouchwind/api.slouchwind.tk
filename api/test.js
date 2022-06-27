@@ -1,6 +1,4 @@
-const fs = require("fs");
-
-module.exports = (req, res) => {
+export default function handler(req, res) {
     const { name } = req.query;
     res.status(200).send("5");
 }
