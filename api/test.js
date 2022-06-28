@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-    var { who } = req;
+    var { who } = req.query;
     res.status(200).send(`Hello ${who}!`);
 
     try {
