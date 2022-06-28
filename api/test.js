@@ -1,6 +1,6 @@
 module.exports = (req, res) => {
     var { who } = req.query;
-    res.status(200).send(`Hello ${who}!`);
+    res.status(200).json({ text: `Hello ${who}!` });
 
     try {
         req.body;
