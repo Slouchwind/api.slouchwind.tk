@@ -22,5 +22,6 @@ var getTime = {
 
 module.exports = (req, res) => {
     var { time, date } = req.query;
+    res.set("Access-Control-Allow-Origin", "*");
     return res.json({ date_text: `${getTime.date()} ${getTime.time()}` });
 };
