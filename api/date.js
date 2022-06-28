@@ -22,7 +22,7 @@ var getTime = {
 
 module.exports = (req, res) => {
     var { time, date } = req.query;
-    res.status(200).json({ date_text: `${getTime.date} ${getTime.time}` });
+    res.status(200).json({ date_text: `${getTime.date()} ${getTime.time()}` });
 
     try {
         req.body;
