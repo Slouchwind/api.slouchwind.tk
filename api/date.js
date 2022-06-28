@@ -22,6 +22,7 @@ Date.prototype.getText = {
 
 module.exports = (req, res) => {
     var { time, date } = req.query;
+    console.log(req.query);
     var ret = {};
     var dealDate;
     res.setHeader("Access-Control-Allow-Origin", "*");
