@@ -1,6 +1,5 @@
-Date.prototype.getText = {
-    time: function () {
-        let date = this;
+var getDateText = {
+    time: function (date) {
         let h = date.getHours();
         if (h < 10) h = "0" + h;
         let m = date.getMinutes();
@@ -9,8 +8,7 @@ Date.prototype.getText = {
         if (s < 10) s = "0" + s;
         return h + ":" + m + ":" + s;
     },
-    date: function () {
-        let date = this;
+    date: function (date) {
         let y = date.getFullYear();
         let m = date.getMonth() + 1;
         if (m < 10) m = "0" + m;
@@ -24,7 +22,7 @@ module.exports = (req, res) => {
     var { time, date } = req.query;
     console.log(req.query);
     var ret = {};
-    var dealDate;
+    var dealDate = new Date();
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
     /*if (time || date) {
@@ -34,6 +32,6 @@ module.exports = (req, res) => {
         dealDate = new Date();
         ret.date_text = `${dealDate.getText.date()} ${dealDate.getText.time()}`;
     }*/
-    ret.date_text = `${dealDate.getText.date()} ${dealDate.getText.time()}`;
+    ret.date_text = `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`;
     return res.json(ret);
 };
