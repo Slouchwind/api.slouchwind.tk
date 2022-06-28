@@ -1,6 +1,6 @@
 var getTime = {
-    time: function () {
-        let date = new Date();
+    time: function (dt = "") {
+        let date = new Date(dt);
         let h = date.getHours();
         if (h < 10) { h = "0" + h; }
         let m = date.getMinutes();
@@ -9,8 +9,8 @@ var getTime = {
         if (s < 10) { s = "0" + s; }
         return h + ":" + m + ":" + s;
     },
-    date: function () {
-        let date = new Date();
+    date: function (dt = "") {
+        let date = new Date(dt);
         let y = date.getFullYear();
         let m = date.getMonth() + 1;
         if (m < 10) { m = "0" + m; }
@@ -24,5 +24,5 @@ module.exports = (req, res) => {
     var { time, date } = req.query;
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
-    return res.json({ date_text: `${getTime.date()} ${getTime.time()}` });
+    return res.json({ date_text: `${getTime.date(date)} ${getTime.time(time)}` });
 };
