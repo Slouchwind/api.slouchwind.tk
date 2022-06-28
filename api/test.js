@@ -1,18 +1,10 @@
-/*export default function handler(req, res) {
-    const { name } = req.query;
-    res.status(200).send("5");
-}*/
-
 module.exports = (req, res) => {
-    let who = 'anonymous';
-
-    if (req.body && req.body.who) {
-        who = req.body.who;
-    } else if (req.query.who) {
-        who = req.query.who;
-    } else if (req.cookies.who) {
-        who = req.cookies.who;
-    }
-
+    var { who } = req;
     res.status(200).send(`Hello ${who}!`);
+
+    try {
+        req.body;
+    } catch (error) {
+        return res.status(400).json({ error: "400 error" });
+    }
 };
