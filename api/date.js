@@ -1,5 +1,5 @@
 var getTime = {
-    time: function (dt = "") {
+    time: function (dt = null) {
         let date = new Date(dt);
         let h = date.getHours();
         if (h < 10) { h = "0" + h; }
@@ -9,7 +9,7 @@ var getTime = {
         if (s < 10) { s = "0" + s; }
         return h + ":" + m + ":" + s;
     },
-    date: function (dt = "") {
+    date: function (dt = null) {
         let date = new Date(dt);
         let y = date.getFullYear();
         let m = date.getMonth() + 1;
