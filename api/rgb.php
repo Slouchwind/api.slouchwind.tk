@@ -51,3 +51,4 @@ if (!empty($g16)) {
 if (!empty($rC) and !empty($gC) and !empty($bC)) {
     img($rC, $gC, $bC);
 }
+?>
