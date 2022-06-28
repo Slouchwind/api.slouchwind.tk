@@ -1,21 +1,21 @@
 var getTime = {
-    time: function (dt = null) {
-        let date = new Date(dt);
+    time: function (dt) {
+        let date = new Date(dt || null);
         let h = date.getHours();
-        if (h < 10) { h = "0" + h; }
+        if (h < 10) h = "0" + h;
         let m = date.getMinutes();
-        if (m < 10) { m = "0" + m; }
+        if (m < 10) m = "0" + m;
         let s = date.getSeconds();
-        if (s < 10) { s = "0" + s; }
+        if (s < 10) s = "0" + s;
         return h + ":" + m + ":" + s;
     },
-    date: function (dt = null) {
-        let date = new Date(dt);
+    date: function (dt) {
+        let date = new Date(dt || null);
         let y = date.getFullYear();
         let m = date.getMonth() + 1;
-        if (m < 10) { m = "0" + m; }
+        if (m < 10) m = "0" + m;
         let d = date.getDate();
-        if (d < 10) { d = "0" + d; }
+        if (d < 10) d = "0" + d;
         return y + "年" + m + "月" + d + "日";
     }
 }
