@@ -27,12 +27,13 @@ module.exports = (req, res) => {
     var dealDate;
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
-    if (time || date) {
+    /*if (time || date) {
 
     }
     else {
         dealDate = new Date();
         ret.date_text = `${dealDate.getText.date()} ${dealDate.getText.time()}`;
-    }
+    }*/
+    ret.date_text = `${dealDate.getText.date()} ${dealDate.getText.time()}`;
     return res.json(ret);
 };
