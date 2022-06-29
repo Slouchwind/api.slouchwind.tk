@@ -23,7 +23,7 @@ module.exports = (req, res) => {
     console.log(req.query);
     var ret = {};
     var dealDate;
-    if (date === "") dealDate = Date.parse(date);
+    if (date === "") dealDate = new Date(Date.parse(date));
     else dealDate = new Date();
     dealDate.setHours(dealDate.getHours() + 8, dealDate.getMinutes(), dealDate.getSeconds() - 34);
     res.setHeader("Access-Control-Allow-Origin", "*");
