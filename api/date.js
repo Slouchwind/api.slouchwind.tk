@@ -19,10 +19,12 @@ var getDateText = {
 }
 
 module.exports = (req, res) => {
-    var { time, date } = req.query;
+    var { date } = req.query;
     console.log(req.query);
     var ret = {};
-    var dealDate = new Date();
+    var dealDate;
+    if (date === undefined) dealDate = Date.parse(date);
+    else dealDate = new Date();
     dealDate.setHours(dealDate.getHours() + 8, dealDate.getMinutes(), dealDate.getSeconds() - 34);
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
