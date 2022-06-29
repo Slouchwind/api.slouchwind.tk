@@ -19,7 +19,7 @@ var getDateText = {
 }
 
 module.exports = (req, res) => {
-    var { date } = req.query;
+    var { date = "" } = req.query;
     console.log(req.query);
     var ret = {};
     var dealDate;
