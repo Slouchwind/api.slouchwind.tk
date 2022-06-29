@@ -37,7 +37,9 @@ module.exports = (req, res) => {
         string: dealDate.toLocaleString()
     };
     ret.text = {
-        date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
+        string: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`,
+        date: getDateText.date(dealDate),
+        time: getDateText.time(dealDate)
     };
     return res.json(ret);
 };
