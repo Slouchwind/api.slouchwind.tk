@@ -23,8 +23,10 @@ a:visited {
 
 a:hover {
     color: #336ca8;
+    text-shadow: #171717b5;
 }
 
 a:active {
     color: #17416d;
+    text-shadow: #000000c6;
 }
