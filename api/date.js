@@ -25,7 +25,12 @@ module.exports = (req, res) => {
     var dealDate = new Date();
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
-    ret.date = dealDate;
-    ret.date_text = `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`;
+    ret.date = {
+        get: dealDate.getTime(),
+        string: dealDate.toLocaleString()
+    };
+    ret.text = {
+        date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
+    };
     return res.json(ret);
 };
