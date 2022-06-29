@@ -27,7 +27,7 @@ module.exports = (req, res) => {
     res.setHeader("Content-Type", "application/json");
     ret.date = {
         get: dealDate.getTime(),
-        string: dealDate.toLocaleString("chinese")
+        string: dealDate.toLocaleString("ch")
     };
     ret.text = {
         date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
