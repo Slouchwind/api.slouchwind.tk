@@ -23,7 +23,7 @@ module.exports = (req, res) => {
     console.log(req.query);
     var ret = {};
     var dealDate;
-    /*if (date === undefined) dealDate = Date.parse(date);
+    if (date === "") dealDate = Date.parse(date);
     else dealDate = new Date();
     dealDate.setHours(dealDate.getHours() + 8, dealDate.getMinutes(), dealDate.getSeconds() - 34);
     res.setHeader("Access-Control-Allow-Origin", "*");
@@ -35,6 +35,5 @@ module.exports = (req, res) => {
     ret.text = {
         date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
     };
-    return res.json(ret);*/
-    return res.send(date);
+    return res.json(ret);
 };
