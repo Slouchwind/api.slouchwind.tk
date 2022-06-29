@@ -7,6 +7,10 @@ a {
     text-decoration: none;
 }
 
+p.center {
+    text-align: center;
+}
+
 a:link {
     color: #727272;
 }
