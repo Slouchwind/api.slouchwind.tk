@@ -23,11 +23,12 @@ module.exports = (req, res) => {
     console.log(req.query);
     var ret = {};
     var dealDate = new Date();
+    dealDate.setHours(dealDate.getHours() + 8);
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Content-Type", "application/json");
     ret.date = {
         get: dealDate.getTime(),
-        string: dealDate.toLocaleString("ch")
+        string: dealDate.toLocaleString()
     };
     ret.text = {
         date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
