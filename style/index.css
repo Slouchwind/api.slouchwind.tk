@@ -6,6 +6,7 @@
 a {
     text-decoration: none;
     font-family: "Consolas", sans-serif, Arial;
+    margin: 0 5px;
 }
 
 p.center {
