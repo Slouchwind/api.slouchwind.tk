@@ -36,5 +36,5 @@ module.exports = (req, res) => {
         date: `${getDateText.date(dealDate)} ${getDateText.time(dealDate)}`
     };
     return res.json(ret);*/
-    return res.write(date);
+    return res.send(date);
 };
