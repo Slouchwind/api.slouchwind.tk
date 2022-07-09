@@ -18,7 +18,7 @@ var getDateText = {
     }
 }
 
-module.exports = (req, res) => {
+export default (req, res) => {
     var { date = "" } = req.query;
     console.log(req.query);
     var ret = {};
