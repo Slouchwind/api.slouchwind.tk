@@ -9,7 +9,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
         name = req.query.name;
     }
     res.send(`Hello ${name}`+"\n")
-        .send(req.method)
+        /*.send(req.method)*/
         .status(200)
         .end();
 }
