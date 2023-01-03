@@ -5,5 +5,5 @@ const MONGODB_URL = `mongodb+srv://slouch_data_user:${process.env.MONGODB_PASSWO
 export default async (req: VercelRequest, res: VercelResponse) => {
     const client = new MongoClient(MONGODB_URL);
     await client.connect();
-    client.db('test').collection('abc');
+    res.status(200).send((await client.db('test').collection('abc').find().toArray()).join());
 }
