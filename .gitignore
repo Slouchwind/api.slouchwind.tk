@@ -1,3 +1,4 @@
 /node_modules
 *.json
 .vercel
+!package.json
