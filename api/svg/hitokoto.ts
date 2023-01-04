@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
 export default (request: VercelRequest, response: VercelResponse) => {
+    response.setHeader('Access-Control-Allow-Origin', '*');
     response.setHeader('Content-Type', 'image/svg+xml');
     const { fill = '#000', c = 'i' } = request.query;
     let reqC = '';
