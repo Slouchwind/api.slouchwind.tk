@@ -1,12 +1,13 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
-export default async (request: VercelRequest, response: VercelResponse) => {
+export default (request: VercelRequest, response: VercelResponse) => {
     response.setHeader('Content-Type', 'image/svg+xml');
     const { fill = '#000', c = 'i' } = request.query;
     let reqC = '';
     if (c instanceof String) reqC = `c=${c}`;
     if (c instanceof Array) reqC = c.map(v => `c=${v}`).join('&');
+    console.log({ c, reqC });
 
     axios(`https://v1.hitokoto.cn/?${reqC}`).then(r => {
         const fetchRes = r.data;
