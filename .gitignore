@@ -2,3 +2,4 @@
 *.json
 .vercel
 !package.json
+.env
