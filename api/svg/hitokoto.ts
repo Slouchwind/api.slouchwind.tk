@@ -7,7 +7,6 @@ export default (request: VercelRequest, response: VercelResponse) => {
     let reqC = '';
     if (typeof c === 'string') reqC = `c=${c}`;
     if (c instanceof Array) reqC = c.map(v => `c=${v}`).join('&');
-    console.log({ c, reqC });
 
     axios(`https://v1.hitokoto.cn/?${reqC}`).then(r => {
         const fetchRes = r.data;
