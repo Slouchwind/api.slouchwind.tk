@@ -2,6 +2,7 @@ import type { VercelRequest, VercelResponse } from '@vercel/node';
 import axios from 'axios';
 
 export default async (request: VercelRequest, response: VercelResponse) => {
+    response.setHeader('Content-Type', 'image/svg+xml');
     const { fill = '#000', c = 'i' } = request.query;
     let reqC: string;
     if (c instanceof String) reqC = `c=${c}`;
