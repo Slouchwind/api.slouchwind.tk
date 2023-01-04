@@ -4,10 +4,11 @@ import axios from 'axios';
 export default async (request: VercelRequest, response: VercelResponse) => {
     response.setHeader('Content-Type', 'image/svg+xml');
     const { fill = '#000', c = 'i' } = request.query;
-    let reqC: string;
+    let reqC = '';
     if (c instanceof String) reqC = `c=${c}`;
-    if (c instanceof Array) reqC = c.map(v => `c=${v}`).join('');
-    axios(`https://v1.hitokoto.cn/?${c}`).then(r => {
+    if (c instanceof Array) reqC = c.map(v => `c=${v}`).join('&');
+
+    axios(`https://v1.hitokoto.cn/?${reqC}`).then(r => {
         const fetchRes = r.data;
         const { hitokoto } = fetchRes;
         response.status(200).send(`
